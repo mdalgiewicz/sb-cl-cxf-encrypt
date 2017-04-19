@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="FruitCatalogService" targetNamespace="http://endpoint.wssencrypt.cxf.sb.example.dalgim.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://endpoint.wssencrypt.cxf.sb.example.dalgim.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:tns="http://endpoint.wssencrypt.cxf.sb.example.dalgim.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://endpoint.wssencrypt.cxf.sb.example.dalgim.com/" version="1.0">
+
+  <xs:element name="Fruit" type="tns:fruit"/>
+
+  <xs:element name="addFruit" type="tns:addFruit"/>
+
+  <xs:element name="addFruitResponse" type="tns:addFruitResponse"/>
+
+  <xs:element name="deleteFruitById" type="tns:deleteFruitById"/>
+
+  <xs:element name="deleteFruitByIdResponse" type="tns:deleteFruitByIdResponse"/>
+
+  <xs:element name="getAllFruit" type="tns:getAllFruit"/>
+
+  <xs:element name="getAllFruitResponse" type="tns:getAllFruitResponse"/>
+
+  <xs:element name="getFruitById" type="tns:getFruitById"/>
+
+  <xs:element name="getFruitByIdResponse" type="tns:getFruitByIdResponse"/>
+
+  <xs:element name="updateFruit" type="tns:updateFruit"/>
+
+  <xs:element name="updateFruitResponse" type="tns:updateFruitResponse"/>
+
+  <xs:complexType name="updateFruit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fruit" type="tns:fruit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fruit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:long"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="protein" type="xs:double"/>
+      <xs:element minOccurs="0" name="carbo" type="xs:double"/>
+      <xs:element minOccurs="0" name="fat" type="xs:double"/>
+      <xs:element minOccurs="0" name="kcal" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateFruitResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="updateFruitResponse" type="tns:fruit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFruitById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fruitId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFruitByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FruitResponse" type="tns:fruit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteFruitById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fruitId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteFruitByIdResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllFruit">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllFruitResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="allFruits" type="tns:fruit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addFruit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="newFruit" type="tns:fruit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addFruitResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createdFruit" type="tns:fruit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="deleteFruitByIdResponse">
+    <wsdl:part name="parameters" element="tns:deleteFruitByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFruitById">
+    <wsdl:part name="parameters" element="tns:getFruitById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllFruit">
+    <wsdl:part name="parameters" element="tns:getAllFruit">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addFruitResponse">
+    <wsdl:part name="parameters" element="tns:addFruitResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addFruit">
+    <wsdl:part name="parameters" element="tns:addFruit">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateFruitResponse">
+    <wsdl:part name="parameters" element="tns:updateFruitResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateFruit">
+    <wsdl:part name="parameters" element="tns:updateFruit">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFruitByIdResponse">
+    <wsdl:part name="parameters" element="tns:getFruitByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteFruitById">
+    <wsdl:part name="parameters" element="tns:deleteFruitById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllFruitResponse">
+    <wsdl:part name="parameters" element="tns:getAllFruitResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FruitCatalog">
+    <wsdl:operation name="updateFruit">
+      <wsdl:input name="updateFruit" message="tns:updateFruit">
+    </wsdl:input>
+      <wsdl:output name="updateFruitResponse" message="tns:updateFruitResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFruitById">
+      <wsdl:input name="getFruitById" message="tns:getFruitById">
+    </wsdl:input>
+      <wsdl:output name="getFruitByIdResponse" message="tns:getFruitByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFruitById">
+      <wsdl:input name="deleteFruitById" message="tns:deleteFruitById">
+    </wsdl:input>
+      <wsdl:output name="deleteFruitByIdResponse" message="tns:deleteFruitByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFruit">
+      <wsdl:input name="getAllFruit" message="tns:getAllFruit">
+    </wsdl:input>
+      <wsdl:output name="getAllFruitResponse" message="tns:getAllFruitResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addFruit">
+      <wsdl:input name="addFruit" message="tns:addFruit">
+    </wsdl:input>
+      <wsdl:output name="addFruitResponse" message="tns:addFruitResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FruitCatalogServiceSoapBinding" type="tns:FruitCatalog">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updateFruit">
+      <soap:operation soapAction="update_fruit" style="document"/>
+      <wsdl:input name="updateFruit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateFruitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFruitById">
+      <soap:operation soapAction="get_fruit_by_id" style="document"/>
+      <wsdl:input name="getFruitById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFruitByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteFruitById">
+      <soap:operation soapAction="delete_fruit_by_id" style="document"/>
+      <wsdl:input name="deleteFruitById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteFruitByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFruit">
+      <soap:operation soapAction="get_all_fruits" style="document"/>
+      <wsdl:input name="getAllFruit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllFruitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addFruit">
+      <soap:operation soapAction="add_fruit" style="document"/>
+      <wsdl:input name="addFruit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addFruitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FruitCatalogService">
+    <wsdl:port name="FruitCatalogPort" binding="tns:FruitCatalogServiceSoapBinding">
+      <soap:address location="http://localhost:9090/FruitCatalogPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

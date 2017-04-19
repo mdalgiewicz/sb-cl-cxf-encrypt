@@ -1,0 +1,4 @@
+server:
+  port: 8081
+fruitService:
+  address: http://localhost:8080/api/FruitCatalog
