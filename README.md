@@ -24,6 +24,8 @@ Below parameters are using in client and server configuration to get wss signatu
 <br/><b>MUST_UNDERSTAND</b> - True if client/server must process ws security actions otherwise false
 <br/><b>PW_CALLBACK_CLASS</b> - Name of PasswordCallback interface implementation which provides password for client/server key 
 
+More about cxf configuration - [Link](https://ws.apache.org/wss4j/config.html)
+
 ### Creating server and client keys
 
 Helpful websites:
@@ -59,5 +61,13 @@ keytool -importcert -keystore server-truststore.jks -alias clientcert -file clie
 
 
 ### Running and testing
+
+If you have any problems with your implementation you can enable precise exception message using below properties. It is very helpful option because in default cxf hides exception messages for security reason. 
+
+```java
+endpoint.getProperties().put(Message.EXCEPTION_MESSAGE_CAUSE_ENABLED, "true");
+endpoint.getProperties().put(Message.FAULT_STACKTRACE_ENABLED, "true");
+```
+  
 
 //TODO
