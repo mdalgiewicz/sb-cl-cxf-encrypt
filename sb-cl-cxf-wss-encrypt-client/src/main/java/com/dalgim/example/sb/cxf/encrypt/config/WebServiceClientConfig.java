@@ -1,6 +1,6 @@
-package com.dalgim.example.sb.cxf.wssencrypt.config;
+package com.dalgim.example.sb.cxf.encrypt.config;
 
-import com.dalgim.example.sb.cxf.wssencrypt.endpoint.FruitCatalog;
+import com.dalgim.example.sb.cxf.encrypt.endpoint.FruitCatalog;
 import com.google.common.collect.Maps;
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.endpoint.Endpoint;

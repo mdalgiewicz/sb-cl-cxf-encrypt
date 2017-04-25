@@ -1,6 +1,6 @@
-package com.dalgim.example.sb.cxf.wssencrypt.endpoint;
+package com.dalgim.example.sb.cxf.encrypt.endpoint;
 
-import com.dalgim.example.sb.cxf.wssencrypt.model.Fruit;
+import com.dalgim.example.sb.cxf.encrypt.model.Fruit;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;

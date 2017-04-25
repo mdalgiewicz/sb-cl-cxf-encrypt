@@ -1,6 +1,6 @@
-package com.dalgim.example.sb.cxf.wssencrypt.endpoint;
+package com.dalgim.example.sb.cxf.encrypt.endpoint;
 
-import com.dalgim.example.sb.cxf.wssencrypt.model.Fruit;
+import com.dalgim.example.sb.cxf.encrypt.model.Fruit;
 import com.google.common.base.Preconditions;
 import org.springframework.stereotype.Service;
 import javax.jws.WebService;
@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * Created by dalgim on 08.04.2017.
  */
 @Service
-@WebService(endpointInterface = "com.dalgim.example.sb.cxf.wssencrypt.endpoint.FruitCatalog", portName = "FruitCatalogPort",
+@WebService(endpointInterface = "com.dalgim.example.sb.cxf.encrypt.endpoint.FruitCatalog", portName = "FruitCatalogPort",
         serviceName = "FruitCatalogService", targetNamespace = "http://endpoint.fruitcatalog.dalgim.com")
 public class FruitCatalogImpl implements FruitCatalog {
 

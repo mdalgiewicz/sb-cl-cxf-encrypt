@@ -1,4 +1,4 @@
-package com.dalgim.example.sb.cxf.wssencrypt.model;
+package com.dalgim.example.sb.cxf.encrypt.model;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

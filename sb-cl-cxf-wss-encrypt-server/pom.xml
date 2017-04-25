@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>sb-cl-cxf-wss-encrypt-server</name>
-	<description></description>
+	<description>Spring Boot, Cxf, Soap, Contract Last, Ws Security with Encrypt - Server</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -22,7 +22,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-
 		<cxf.version>3.1.10</cxf.version>
 	</properties>
 
@@ -32,13 +31,11 @@
 			<artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
 			<version>3.1.11</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -76,7 +73,7 @@
 						<id>process-classes</id>
 						<phase>process-classes</phase>
 						<configuration>
-							<className>com.dalgim.example.sb.cxf.wssencrypt.endpoint.FruitCatalog</className>
+							<className>com.dalgim.example.sb.cxf.encrypt.endpoint.FruitCatalog</className>
 							<genWsdl>true</genWsdl>
 							<verbose>true</verbose>
 						</configuration>
